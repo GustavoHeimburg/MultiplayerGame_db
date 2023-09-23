@@ -106,7 +106,6 @@ app.post('/login', function (req, res) {
     });
 });
 
-
 app.post('/registrar', (req, res) => {
     const userData = req.body; // Obtenha os dados do corpo da solicitação POST.
 
