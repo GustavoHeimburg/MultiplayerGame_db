@@ -121,3 +121,4 @@ app.post('/registrar', (req, res) => {
         res.json({ success: 'Usuário registrado com sucesso' });
     });
 });
+
