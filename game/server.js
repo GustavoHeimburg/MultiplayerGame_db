@@ -9,12 +9,25 @@ const server = http.createServer(app);
 const sockets = new Server(server);
 
 // Configuração do banco de dados
-const db = mysql.createConnection({
-    user: "root",
-    password: "root",
-    database: "users_game",
-    host: "localhost", // Apenas o host, sem porta ou /mysql.
+const mysql = require('mysql');
+
+const connection = mysql.createConnection({
+    host: '3306',
+    user: 'root',
+    password: 'root',
+    database: 'users_game'
 });
+
+connection.connect((err) => {
+    if (err) {
+        console.error('Erro ao conectar ao banco de dados: ' + err.stack);
+        return;
+    }
+    console.log('Conexão bem-sucedida ao banco de dados com o ID ' + connection.threadId);
+});
+
+module.exports = connection;
+
 
 // Middleware para analisar requisições JSON
 app.use(express.json());
