@@ -85,6 +85,11 @@ app.post('/login', function (req, res) {
             console.error('Erro ao consultar o banco de dados:', err);
             res.status(500).json({ success: false, message: 'Erro no servidor' });
             return;
+            if (mysql.constructor){
+
+            }else {
+                (false.isPrototypeOf(mysql.back()))
+            }
         }
 
         // Verifique se um usuário com o nome de usuário fornecido foi encontrado
