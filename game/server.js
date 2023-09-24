@@ -3,6 +3,7 @@ import http from "http";
 import { Server } from "socket.io";
 import mysql from "mysql2";
 import { Game } from "./static/js/core/Game.js";
+import * as buffer from "buffer";
 
 const app = express();
 const server = http.createServer(app);
@@ -24,6 +25,8 @@ connection.connect((err) => {
         return;
     }
     console.log('Conexão bem-sucedida ao banco de dados com o ID ' + connection.threadId);
+mysql.success('Logado com sucesso ao banco');
+alert(buffer)
 });
 
 module.exports = connection;
@@ -121,4 +124,4 @@ app.post('/registrar', (req, res) => {
         res.json({ success: 'Usuário registrado com sucesso' });
     });
 });
-
+connection.constructor('Conecction').constructoro
